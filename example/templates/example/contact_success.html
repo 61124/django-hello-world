@@ -1,0 +1,17 @@
+<!-- example/templates/example/contact_success.html -->
+{% extends 'example/base.html' %}
+
+{% block title %}Message Sent | Django App{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="form-container text-center">
+            <i class="fas fa-check-circle fa-5x text-success mb-4"></i>
+            <h2 class="mb-4">Thank You!</h2>
+            <p class="lead mb-4">Your message has been sent successfully. We will get back to you as soon as possible.</p>
+            <a href="{% url 'index' %}" class="btn btn-primary">Back to Home</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
