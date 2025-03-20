@@ -1,0 +1,43 @@
+<!-- example/templates/example/submission_detail.html -->
+{% extends 'example/base.html' %}
+
+{% block title %}Submission Details | Django App{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Submission Details</h2>
+        <a href="{% url 'submission_list' %}" class="btn btn-outline-primary">
+            <i class="fas fa-arrow-left"></i> Back to List
+        </a>
+    </div>
+    
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            <h5 class="card-title mb-0">{{ submission.subject }}</h5>
+        </div>
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col-md-3 fw-bold">Submitted by:</div>
+                <div class="col-md-9">{{ submission.name }}</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3 fw-bold">Email:</div>
+                <div class="col-md-9">{{ submission.email }}</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3 fw-bold">Date:</div>
+                <div class="col-md-9">{{ submission.created_at|date:"F d, Y H:i" }}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 fw-bold">Message:</div>
+                <div class="col-md-9">
+                    <div class="p-3 bg-light rounded">
+                        {{ submission.message|linebreaks }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
